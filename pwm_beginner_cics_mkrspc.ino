@@ -11,11 +11,6 @@ uint8_t pwm_value;                        // Stores current PWM output value
 bool    count_up;                         // Determines count direction
 
 void setup() {
-  Serial.begin(115200);                   // Initialize Serial Port
-  while(!Serial);                         // Wait for Serial Port to Initialize
-  Serial.println("Serial Port Opened!");
-
-  pinMode(LED_PIN, OUTPUT);               // Set LED Pin as an OUTPUT
   pwm_value = 0;                          // Start LED in off state
   count_up = true;                        // Begin increasing LED PWM value when loop starts
 }
@@ -38,5 +33,5 @@ void loop() {
     }
   }
 
-  delay(5);
+  delay(5);  // Delay for a set number of ms. Microcontroller does nothing in this time.
 }
